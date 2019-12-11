@@ -3,7 +3,7 @@
   <div class="login-box" fxFlex="30">
     <mat-card>
       <h2>LOGIN</h2>
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div fxLayout="column">
           <mat-form-field>
             <input formControlName="email" matInput placeholder="E-mail">
@@ -16,7 +16,7 @@
           </mat-form-field>
 
           <mat-card-actions fxLayout="row" fxLayoutAlign="center center" >
-            <button  mat-flat-button color="primary" type="submit">LOGIN</button>
+            <button  mat-flat-button color="primary" type="submit" [disabled]="loginForm.invalid">LOGIN</button>
           </mat-card-actions>
         </div>
       </form>
