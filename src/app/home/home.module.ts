@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeRouteModule } from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { HomeGuard } from './home.guard';
 
 @NgModule({
   declarations: [HomePageComponent],

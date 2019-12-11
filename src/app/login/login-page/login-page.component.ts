@@ -36,8 +36,10 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit() {
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJwcm9maWxlIjp7IlBhaW5lbEEiOnRydWUsIlBhaW5lbEIiOmZhbHNlfX0.4Ee96WTCnno0LefvJOwbEOAA0XUNIl2-tSN7MLRu-Lo'
     if(this.loginForm.valid) {
       this.router.navigate(['/home'])
+      localStorage.setItem('token', token)
     }
   }
 
