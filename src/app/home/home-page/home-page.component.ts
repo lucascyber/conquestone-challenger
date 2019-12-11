@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Login } from '../../login/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +10,7 @@ import { Login } from '../../login/login.model';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   userLogin: Login
 
@@ -17,6 +18,11 @@ export class HomePageComponent implements OnInit {
     if(this.auth.doLogin()) {
       this.userLogin = this.auth.doLogin()
     }
+  }
+
+  doExit() {
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
   }
 
 }

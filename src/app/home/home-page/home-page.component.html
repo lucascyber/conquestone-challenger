@@ -1,12 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button (click)="doExit()">SAIR</button>
+  </mat-toolbar-row>
+
+</mat-toolbar>
 <section class="main-home" fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="center center">
-  
-  <div fxFlex="50" class="painel-a">
+
+  <div fxFlex="50" class="painel-a"
+    *ngIf="userLogin.profile.PainelA || (userLogin.profile.PainelA && userLogin.profile.PainelB)">
     <mat-card class="bg-indigo-lightest">
       <h2>PAINEL A</h2>
     </mat-card>
   </div>
 
-  <div fxFlex="50" class="painel-b">
+  <div fxFlex="50" class="painel-b"
+    *ngIf="userLogin.profile.PainelB || (userLogin.profile.PainelA && userLogin.profile.PainelB)">
     <mat-card class="bg-lime-light">
       <h2>PAINEL B</h2>
     </mat-card>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeGuard } from './home/home.guard';
+import { LoginGuard } from './login/login.guard';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {
     path: 'login', 
     loadChildren: () => 
-      import(`./login/login.module`).then(m => m.LoginModule) 
+      import(`./login/login.module`).then(m => m.LoginModule),
+      canLoad: [LoginGuard] 
   },
   {
     path: 'home', 

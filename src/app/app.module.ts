@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeGuard } from './home/home.guard';
+import { AuthService } from './core/services/auth.service';
+import { LoginGuard } from './login/login.guard';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { HomeGuard } from './home/home.guard';
     BrowserAnimationsModule
   ],
   providers: [
-    HomeGuard
+    HomeGuard,
+    LoginGuard
   ],
   bootstrap: [AppComponent]
 })
