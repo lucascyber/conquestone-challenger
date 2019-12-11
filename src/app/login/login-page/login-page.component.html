@@ -1,1 +1,26 @@
-<p>login-page works!</p>
+<section class="main-login" fxLayout="row" fxLayoutAlign="space-around center">
+
+  <div class="login-box" fxFlex="30">
+    <mat-card>
+      <h2>LOGIN</h2>
+      <form [formGroup]="loginForm">
+        <div fxLayout="column">
+          <mat-form-field>
+            <input formControlName="email" matInput placeholder="E-mail">
+            <mat-error *ngIf="loginForm.get('email').invalid">{{emailValidationHandler()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="password" matInput placeholder="Senha" type="password">
+            <mat-error *ngIf="loginForm.get('password').invalid">{{passwordValidationHandler()}}</mat-error>
+          </mat-form-field>
+
+          <mat-card-actions fxLayout="row" fxLayoutAlign="center center" >
+            <button  mat-flat-button color="primary" type="submit">LOGIN</button>
+          </mat-card-actions>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+
+</section>
