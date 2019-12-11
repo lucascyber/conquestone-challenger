@@ -5,14 +5,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginGuard implements CanLoad {
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) { }
 
-    canLoad(route: Route): boolean {
-      
-      if(this.auth.doLogin()) {
-        this.router.navigate(['/home'])
-      }
+  canLoad(route: Route): boolean {
 
-      return true
+    if (this.auth.doLogin()) {
+      this.router.navigate(['/home'])
     }
+
+    return true
+  }
 }

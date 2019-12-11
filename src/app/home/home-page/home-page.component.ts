@@ -14,8 +14,8 @@ export class HomePageComponent implements OnInit {
 
   userLogin: Login
 
-  ngOnInit(){
-    if(this.auth.doLogin()) {
+  ngOnInit() {
+    if (this.auth.doLogin()) {
       this.userLogin = this.auth.doLogin()
     }
   }

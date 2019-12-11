@@ -5,21 +5,22 @@ import { LoginGuard } from './login/login.guard';
 
 
 const routes: Routes = [
-  { path: '',
+  {
+    path: '',
     redirectTo: '/login',
     pathMatch: 'full'
   },
   {
-    path: 'login', 
-    loadChildren: () => 
+    path: 'login',
+    loadChildren: () =>
       import(`./login/login.module`).then(m => m.LoginModule),
-      canLoad: [LoginGuard] 
+    canLoad: [LoginGuard]
   },
   {
-    path: 'home', 
-    loadChildren: () => 
+    path: 'home',
+    loadChildren: () =>
       import(`./home/home.module`).then(m => m.HomeModule),
-      canLoad: [HomeGuard]
+    canLoad: [HomeGuard]
   }
 ];
 
