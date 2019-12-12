@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  doExit() {
+  logout() {
     localStorage.removeItem('token')
     this.router.navigate(['/login'])
   }
